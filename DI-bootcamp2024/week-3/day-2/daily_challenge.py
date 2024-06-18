@@ -1,10 +1,10 @@
-import math
+from math import ceil
 class Pagination:
     def __init__(self, items, page_size = 10):
         self.items = items
         self.page_size = int(page_size)
         self.current_page = 1
-        self.total_page = math.ceil((len(self.items)/self.page_size)) - 1
+        self.total_page = ceil(len(items) / page_size)
 
                 
     def get_visible_item(self):
