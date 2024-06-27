@@ -8,7 +8,7 @@ class Pagination:
 
                 
     def get_visible_item(self):
-        visible_item = self.items[self.current_page * self.page_size : self.current_page * self.page_size + self.page_size]
+        visible_item = self.items[(self.current_page - 1) * self.page_size:self.current_page * self.page_size]
         print(visible_item)
     
     def prevPage(self):

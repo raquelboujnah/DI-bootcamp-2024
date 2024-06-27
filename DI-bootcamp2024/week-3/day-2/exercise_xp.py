@@ -148,7 +148,7 @@ class TheIncredibles(Family):
             
     def incredible_presentation(self):
         print(f'Here is our powerful family: {self.last_name}')
-        Family.family_presentation()
+        self.family_presentation()
         
 family_2 = TheIncredibles('Incredible')
 family_2.incredible_presentation()

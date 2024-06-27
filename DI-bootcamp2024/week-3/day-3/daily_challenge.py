@@ -4,11 +4,12 @@ class Circle:
     all_circle = []
     
     def __init__(self, diameter = None, radius = None):
-        if diameter != None:
-            self.radius = diameter / 2
-        elif radius != None:
+        self.diameter = diameter
+        self.radius = radius
+        if diameter == None:
             self.diameter = radius * 2
-        Circle.all_circle.append(self)
+        elif radius == None:
+            self.radius = diameter / 2
         
     def caculate_area(self):
         return math.pi * self.radius ** 2
@@ -18,6 +19,7 @@ class Circle:
         
     def __add__(self, other):
         new_radius = self.radius + other.radius
+        self.all_circle.append(other)
         return Circle(radius = new_radius)
     
     def __gt__(self, other):
